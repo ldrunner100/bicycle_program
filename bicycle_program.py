@@ -11,7 +11,11 @@ class bicycle(object):
 class bike_shop(object):
     def __init__(self, name, inventory):
         self.name = name
-        self.inventory = inventory
+        self.inventory = inventory 
+    
+    def sales_price(self, bicycle):
+        price = (bicycle.cost * 1.20)
+        return price
         
 class customers(object):
     def __init__(self, name, fund):
@@ -26,17 +30,23 @@ class customers(object):
         
         
 if __name__ == '__main__':
-   print bike_shop("mikes bikes", 6)
-   print bicycle("xray", 10, 300)
-   print bicycle("sloop", 8, 400)
-   print bicycle("flame", 6, 500)
-   print bicycle("rocket", 5, 700)
-   print bicycle("superman", 4.5, 1000)
-   print bicycle("basic", 11, 250)
-   print customers("bob", 200)
-   print customers("jack", 500)
-   print customers("joe", 1000)
-   print customers("bill", 250)
+   
+   inventory = []
+   customer = []
+   inventory.append(bicycle("xray", 10, 300))
+   inventory.append(bicycle("sloop", 8, 400))
+   inventory.append(bicycle("flame", 6, 500))
+   inventory.append(bicycle("rocket", 5, 700))
+   inventory.append(bicycle("superman", 4.5, 1000))
+   inventory.append(bicycle("basic", 11, 250))    
+   customer.append(customers("jack", 500))
+   customer.append(customers("bob", 200))
+   customer.append(customers("joe", 1000))
+   customer.append(customers("bill", 250))
+   #print(inventory, customer)
+   
+   print (bike_shop("wheels", inventory))
+   
    
     
     
